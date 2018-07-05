@@ -1,0 +1,552 @@
+// VARIABLES
+$light: #e0e2e3;
+$base: #454545;
+$blue: #298ef1;
+
+
+// MIXINS
+@mixin gradient {
+  background: #3f5ae9;
+  background: -moz-linear-gradient(-45deg, #3f5ae9 0%, #02e0f3 100%);
+  background: -webkit-linear-gradient(-45deg, #3f5ae9 0%,#02e0f3 100%);
+  background: linear-gradient(135deg, #3f5ae9 0%,#02e0f3 100%);
+}
+
+
+/********************************************
+*********************************************
+BASE
+*********************************************
+********************************************/
+h1{
+  color:#fff;
+  font-size:3.125rem;
+  font-weight:700;
+  margin-bottom:0.5rem;
+}
+h2{
+  color:$base;
+  font-size: 1.75rem;
+}
+p{
+  font-size:1rem;
+  color:$base;
+  margin-bottom:3rem;
+  &.white-text{
+    color:#fff;
+  }
+}
+ul{
+  padding-left:0px;
+}
+li{
+  list-style-type: none;
+}
+.fab {
+    font-size: 1.85rem;
+    margin-right: 10px;
+}
+
+
+/********************************************
+*********************************************
+LAYOUT
+*********************************************
+********************************************/
+.container{
+  position:relative;
+  width: 98%;
+  max-width: 1150px;
+  margin:10px auto 0;
+}
+.row, .col {
+    box-sizing: border-box;
+}
+.row:before, .row:after {
+    content: " ";
+    display: table;
+}
+.row:after {
+    clear: both;
+}
+.col{
+  display: block;
+  margin: 0;
+  float: left;
+  &.one-col{
+    width:8.33333%;
+  }
+  &.two-col{
+    width:50%
+  }
+  &.visual-content{
+    width:55%;
+    text-align:center;
+    & img{
+      width:90%;
+    }
+  }
+  &.text-content{
+    margin-top: 8%;
+    width:45%;
+  }
+  &.three-col{
+    width:33.33333%;
+  }
+  &.four-col{
+    width:25%;
+  }
+  &.icons{
+    width:33.33333%;
+    text-align: left;
+    padding: 0 30px;
+    &:nth-of-type(3) img{
+      margin-left:-10px;
+    }
+  }
+  &.seven-col{
+    width:58.33333%;
+  }
+  &.eight-col{
+    width: 75%;
+  }
+}
+section{
+  padding:0;
+  margin:0;
+  min-height: 435px;
+  &#home{
+    min-height:600px;
+    @include gradient;
+    & .text-content{
+      margin-top: 10%;
+    }
+    & .visual-content{
+      margin-top: 13%;
+    }
+  }
+  &#testimonials{
+    background-image: url('http://localhost:8888/wp-content/uploads/2018/07/background.svg'); background-position: bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+    & .row{
+      text-align:center;
+    }
+    & .container{
+      width:100% !important;
+      overflow: hidden;
+      max-width: none;
+    }
+    & p{
+      margin-bottom:1rem;
+    }
+  }
+  &#mockup{
+    & .two-col{
+      margin-top: 8%;
+    }
+    & .visual{
+      margin-top:0;
+      text-align: center;
+    }
+  }
+  &#features{
+    text-align: center;
+    & h3{
+      margin-top:0;
+    }
+  }
+}
+
+/********************************************
+*********************************************
+MENU
+*********************************************
+********************************************/
+.site-nav{
+  width:100%;
+  position:fixed;
+  top:0;
+  left:0;
+}
+.nav-bar{
+  display:block;
+  float:right;
+  text-align:right;
+  font-weight:300;
+  & li{
+    display:inline-block;
+    padding: 0px 25px;
+    & > a{
+      color:#fff;
+      &:hover{
+        &:after{
+          content: " ";
+          display: block;
+          width: 100%;
+          height: 2px;
+          background-color: white;
+          margin-top: 2px;
+          animation-duration: 1s;
+          animation-name: menuAnimate;
+        }
+      }
+    }
+  }
+}
+.navScroll,.navOpen{
+    height: 63px;
+    background: $blue;
+    z-index: 2000;
+}
+
+/********************************************
+*********************************************
+MOBILE MENU
+*********************************************
+********************************************/
+.toggle-menu{
+  color: #fff;
+  font-size: 1.3rem;
+  margin-top: 10px;
+  display:none;
+  text-align: right;
+  position: absolute;
+  right: 4%;
+}
+.nav-mobile{
+  display:none;
+  position:fixed;
+  color:#fff;
+  top:0px;
+  width:100%;
+  font-size: 1.25rem;
+  text-align:center;
+  background-color:$blue;
+  padding-top: 63px;
+  & ul{
+    width:100%;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+  & ul li{
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.5);
+    &:hover{
+      background-color:#425bee;
+    }
+    & > a{
+      color:#fff;
+    }
+    &:last-child{
+      border:none;
+    }
+  }
+  &.open{
+    display: block;
+  }
+}
+
+/********************************************
+*********************************************
+ICONS
+*********************************************
+********************************************/
+img.icon{
+  width: 20%;
+  margin-bottom:10px;
+}
+
+/********************************************
+*********************************************
+LINKS AND BUTTONS
+*********************************************
+********************************************/
+a{
+  text-decoration: none;
+}
+.btn{
+  padding:8px 25px;
+  border-radius:10px;
+  font-weight:500;
+  &.btn-white{
+    color:#fff;
+    border:1.5px solid #fff;
+    &:hover{
+      background-color: rgba(255,255,255,0.8);
+      color:#000;
+      mix-blend-mode: screen;
+    }
+  }
+  &.btn-full-white{
+    background-color:#fff;
+    color:#000;
+    mix-blend-mode: screen;
+    padding:9.5px 26.5px;
+    opacity:0.8;
+    margin-right:20px;
+    &:hover{
+      background-color: rgba(41,142,241,0.8);
+      color:white;
+      opacity: 1;
+    }
+  }
+  &.btn-blue{
+    color:$blue;
+    border:1.5px solid $blue;
+    &:hover{
+      background-color: rgba(41,142,241,0.8);
+      color:white;
+    }
+  }
+}
+
+
+/********************************************
+*********************************************
+ANIMATIONS
+*********************************************
+********************************************/
+.visual img{
+  margin-left: 700px;
+}
+.visual img.animate{
+  animation-duration: 1.5s;
+  animation-name: slide;
+  animation-delay: 0.5s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards
+}
+
+@keyframes slide {
+  from {
+    margin-left: 700px;
+    opacity:0;
+  }
+
+  to {
+    margin-left: 0;
+    opacity:1;
+  }
+}
+
+@keyframes menuAnimate {
+  from {
+    opacity: 0;
+    margin-top: 10px;
+  }
+
+  to {
+    opacity: 1;
+    margin-top: 2px;
+  }
+}
+
+@keyframes open {
+  from {
+    margin-top: -300px;
+  }
+
+  to {
+    margin-top: 0px;
+  }
+}
+
+@keyframes close {
+  from {
+    margin-top: 0px;
+  }
+
+  to {
+    margin-top: -300px;
+  }
+}
+/********************************************
+*********************************************
+CONTACT CTA
+*********************************************
+********************************************/
+#contact{
+  @include gradient;
+  min-height: 95px !important;
+  height: 110px;
+  & .container{
+    margin-top:0;
+  }
+  & h2{
+    color:#fff;
+    margin-bottom:0px;
+  }
+  & p{
+    color:#fff;
+    margin-top:5px;
+    margin-bottom:0;
+  }
+  & .btn{
+    margin-top: 35px;
+    display: inline-block;
+  }
+}
+
+
+/********************************************
+*********************************************
+FOOTER
+*********************************************
+********************************************/
+footer{
+  background-color:$light;
+  color: $base;
+  padding: 15px 0px 25px 0px;
+}
+footer .four-col:first-child{
+  margin-top:13px;
+}
+.textwidget > ul{
+    list-style-type: none;
+    padding-left: 0px;
+    font-size:0.9rem;
+  & > li{
+    margin: 5px 0px;
+    & a{
+      color:$base;
+      &:hover{
+        color:$blue;
+      }
+    }
+  }
+}
+.copyright{
+  background-color:#191919;
+}
+
+/********************************************
+*********************************************
+LAYOUT
+*********************************************
+********************************************/
+
+
+/********************************************
+*********************************************
+MEDIA QUERIES
+*********************************************
+********************************************/
+
+@media only screen and (min-width: 320px) and (max-width: 736px){
+  .container {
+    width: 95%;
+  }
+  h2{
+    margin-top:0px;
+  }
+  section{
+    padding: 25px 5px;
+    text-align: center;
+  }
+  section#home{
+    height: auto;
+    min-height: 600px;
+    padding-bottom: 12%;
+      & .visual-content {
+        margin-top: 9%;
+      }
+      & .text-content {
+        margin-top: 0px;
+    }
+  }
+  .col.icons{
+    width: 100%;
+    text-align:center;
+  }
+  section#mockup .two-col {
+    margin-top: 0;
+    text-align:center;
+  }
+  section#mockup .visual {
+    margin-top: 35px;
+    & img{
+      width:100%
+    }
+  }
+  img.icon {
+    width: 35%;
+  }
+  .col.icons:nth-of-type(3) img{
+    margin-left:0;
+  }
+  #contact .btn {
+    margin-top: 0px;
+  }
+  footer{
+    text-align:center;
+  }
+  .textwidget > ul {
+    font-size: 1.0714rem;
+  }
+  .fab {
+    font-size: 2.5rem;
+     &:last-child{
+       margin-right:0;
+     }
+  }
+}
+@media only screen and (min-width: 737px) and (max-width: 1024px){
+  h1{
+    margin-top:0
+  }
+  section{
+    padding: 25px 5px;
+  }
+  .col.visual-content, .col.text-content{
+    width:100%;
+    text-align:center;
+  }
+  section#home{
+    height: auto;
+    min-height: 650px;
+    padding-bottom:10%;
+      & .visual-content {
+        margin-top: 5%;
+      }
+      & .text-content {
+        margin-top: 0px;
+      }
+  }
+  img.icon {
+    width: 25%;
+  }
+  section#mockup .two-col {
+    text-align:left;
+  }
+  #contact{
+    & .no-show{
+      display:none !important;
+    }
+    & .three-col{
+      width:50%;
+      &:last-child{
+        text-align:center;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1024px){
+  .container {
+    width: 95%;
+  }
+  .toggle-menu{
+    display:block;
+  }
+  .nav-bar{
+    display:none !important;
+  }
+}
+@media screen and (max-width: 737px){
+  .col{
+      width: 100% !important;
+      display: block;
+      margin: 0;
+      clear:both;
+  }
+}

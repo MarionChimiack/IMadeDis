@@ -1,0 +1,21 @@
+@mixin gradient {
+  background: #3f5ae9;
+  background: -moz-linear-gradient(-45deg, #3f5ae9 0%, #02e0f3 100%);
+  background: -webkit-linear-gradient(-45deg, #3f5ae9 0%,#02e0f3 100%);
+  background: linear-gradient(135deg, #3f5ae9 0%,#02e0f3 100%);
+}
+body{
+  margin:0;
+}
+h1{
+  color:#fff;
+  font-size:1.5em;
+}
+section{
+  padding:0;
+  margin:0;
+  &#home{
+    height:550px;
+    @include gradient;
+  }
+}

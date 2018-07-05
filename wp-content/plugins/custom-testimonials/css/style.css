@@ -1,0 +1,59 @@
+.owl-carousel{
+  margin-top: 0px;
+}
+.owl-carousel .owl-stage-outer {
+  overflow: visible !important;
+}
+.owl-stage{
+    padding-top:50px;
+    padding-bottom:50px;
+}
+.owl-item > .item{
+  background-color: rgba(255,255,255,0.85);
+  background-image : url('http://grauction.marion-chimiack.com/wp-content/uploads/2018/07/quote-02.svg');
+  background-repeat: no-repeat;
+  background-size: 20%;
+  background-position: right bottom;
+  padding:30px;
+  height:165px;
+  max-height:165px;
+  border-radius:10px;
+  -webkit-box-shadow: 0px 1px 45px 1px rgba(0,0,0,0.15);
+  -moz-box-shadow: 0px 1px 45px 1px rgba(0,0,0,0.15);
+  box-shadow: 0px 1px 45px 1px rgba(0,0,0,0.15);
+}
+.owl-item.active{
+  opacity: 0.35;
+}
+.owl-item.active.center{
+  opacity: 1;
+}
+.owl-item > .item > p{
+  font-size:0.875rem;
+}
+.owl-item .item img{
+  font-size:0.85rem;
+  max-height: 25px;
+  width: auto !important;
+}
+.owl-dots {
+    margin-top: 5px !important;
+    margin-bottom: 15px;
+}
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+    background: #02e0f3 !important;
+}
+@media only screen and (max-width: 380px){
+  .owl-item > .item{
+    padding:20px;
+    height:185px;
+    max-height:185px;
+  }
+  .owl-item > .item > p{
+    font-size:0.75rem;
+  }
+  .owl-stage{
+      padding-top:25px;
+      padding-bottom:25px;
+  }
+}
