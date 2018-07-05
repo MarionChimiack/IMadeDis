@@ -2,12 +2,16 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Grauction Test - Build A World Inside An App">
+    <meta name="keywords" content="Wordpress, Project, Web Project">
+    <meta name="author" content="Marion">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?php bloginfo( 'name' ) ?></title>
     <?php wp_head(); ?>
-    <link rel='stylesheet' id='owl-carousel-css'  href='http://localhost:8888/wp-content/plugins/custom-testimonials/css/owl.carousel.min.css?ver=4.9.6' type='text/css' media='all' />
-    <link rel='stylesheet' id='owl-theme-css'  href='http://localhost:8888/wp-content/plugins/custom-testimonials/css/owl.theme.default.min.css?ver=4.9.6' type='text/css' media='all' />
-    <script type='text/javascript' src='http://localhost:8888/wp-content/plugins/custom-testimonials/js/owl.carousel.min.js?ver=4.9.6'></script>
+    <link rel='stylesheet' id='owl-carousel-css'  href='http://grauction.marion-chimiack.com/wp-content/plugins/custom-testimonials/css/owl.carousel.min.css?ver=4.9.6' type='text/css' media='all' />
+    <link rel='stylesheet' id='owl-theme-css'  href='http://grauction.marion-chimiack.com/wp-content/plugins/custom-testimonials/css/owl.theme.default.min.css?ver=4.9.6' type='text/css' media='all' />
+    <script type='text/javascript' src='http://grauction.marion-chimiack.com/wp-content/plugins/custom-testimonials/js/owl.carousel.min.js?ver=4.9.6'></script>
   </head>
   <body>
     <nav id="nav-full" class="site-nav">
