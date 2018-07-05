@@ -550,3 +550,8 @@ MEDIA QUERIES
       clear:both;
   }
 }
+@media screen and (min-width:1500px){
+  section#home .visual-content {
+    margin-top: 5%;
+  }
+}
